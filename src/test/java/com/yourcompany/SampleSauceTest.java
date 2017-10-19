@@ -132,6 +132,8 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider, SauceOnD
         String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
         sessionId.set(id);
 
+        System.out.println("Sauce Connect SE Port: " + System.getenv("SELENIUM_PORT"));
+
         // print out sessionId and jobname for consumption by Sauce Jenkins plugin
         System.out.println(String.format("SauceOnDemandSessionID=%1$s job-name=%2$s", id, methodName));
 
